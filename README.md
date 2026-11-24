@@ -18,29 +18,6 @@
 
 ---
 
-## 🚀 Local Development
-
-Open `index.html` directly in your browser:
-```bash
-xdg-open index.html
-```
-Or run a lightweight Python HTTP server:
-```bash
-python3 -m http.server 8080
-```
-
----
-
-## 🐳 Docker Deployment
-
-Run with Docker Compose:
-```bash
-docker compose up -d
-```
-The site will be available at `http://localhost:8080`.
-
----
-
 ## 📬 Contacts
 
 - **Email:** [vakt_ops@proton.me](mailto:vakt_ops@proton.me)
