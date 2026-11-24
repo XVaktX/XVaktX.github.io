@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тимофей И. — Резюме</title>
+  <meta name="description" content="Резюме и портфолио специалиста. Санкт-Петербург.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #0f172a;
+      --card-border: #1e293b;
+      --accent: #06b6d4;
+      --accent-glow: rgba(6, 182, 212, 0.15);
+      --green: #10b981;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --pill-bg: #1e293b;
+      --pill-text: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      padding: 3.5rem 1rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Top Header — Minimalist Layout */
+    .hero-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-name {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-bio {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-location {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .icon-inline {
+      width: 14px;
+      height: 14px;
+      stroke: var(--text-muted);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    /* Minimalist SVG Icon Buttons */
+    .contact-icons-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+
+    .icon-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--text);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      transition: stroke 0.15s ease;
+    }
+
+    .icon-btn:hover {
+      background: #1e293b;
+      border-color: var(--accent);
+    }
+
+    .icon-btn:hover svg {
+      stroke: var(--accent);
+    }
+
+    /* Avatar Placeholder */
+    .avatar-wrapper {
+      flex-shrink: 0;
+    }
+
+    .avatar-placeholder {
+      width: 110px;
+      height: 110px;
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .avatar-placeholder svg {
+      width: 44px;
+      height: 44px;
+      stroke: #475569;
+      stroke-width: 1.5;
+      fill: none;
+    }
+
+    /* Section Styles */
+    section {
+      margin-bottom: 2.25rem;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.01em;
+    }
+
+    .about-text {
+      color: var(--text-muted);
+      font-size: 0.925rem;
+      line-height: 1.6;
+    }
+
+    /* Work Experience Cards */
+    .exp-card {
+      margin-bottom: 1.5rem;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.2rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .company-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .exp-date {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .exp-role-title {
+      font-size: 0.875rem;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 0.45rem;
+    }
+
+    .exp-desc {
+      font-size: 0.875rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    .exp-bullets {
+      list-style-type: none;
+      margin-top: 0.45rem;
+    }
+
+    .exp-bullets li {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 0.35rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: "-";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+    }
+
+    /* Skills Badges */
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .skill-pill {
+      font-size: 0.775rem;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      background: #0f172a;
+      color: #cbd5e1;
+      border: 1px solid var(--card-border);
+      transition: all 0.15s ease;
+    }
+
+    .skill-pill:hover {
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    /* Projects Grid (2 columns) */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-header {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+      .avatar-placeholder {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    .project-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.15s ease;
+    }
+
+    .project-item:hover {
+      border-color: #334155;
+    }
+
+    .project-top {
+      margin-bottom: 0.85rem;
+    }
+
+    .project-title-row {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--green);
+    }
+
+    .project-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .project-text {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .ptag {
+      font-size: 0.68rem;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      background: #030712;
+      color: #94a3b8;
+      border: 1px solid #1e293b;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+        padding: 0;
+      }
+      .icon-btn {
+        display: none !important;
+      }
+      .project-item, .skill-pill {
+        border-color: #cbd5e1;
+        background: #fff;
+        color: #000;
+      }
+      .hero-name, .company-name, .project-name, .section-title {
+        color: #000 !important;
+      }
+      .hero-bio, .hero-location, .exp-desc, .project-text {
+        color: #334155 !important;
+      }
+      .avatar-placeholder {
+        border-color: #cbd5e1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- HEADER -->
+    <header class="hero-header">
+      <div class="hero-text">
+        <h1 class="hero-name">Тимофей И.</h1>
+        <div class="hero-role" style="font-size: 1.05rem; font-weight: 600; color: #f1f5f9; margin-bottom: 0.4rem;">
+          Младший системный инженер / Инженер инфраструктурной поддержки
+        </div>
+        <p class="hero-bio">
+          Настройка, развёртывание и поддержка Linux-серверов, баз данных и веб-сервисов. Обеспечение сетевой связности компонентов (Nginx, Docker, PostgreSQL), мониторинг стабильности и устранение инцидентов.
+        </p>
+        <div class="hero-location mono">
+          <svg class="icon-inline" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          <span>Россия, Санкт-Петербург</span>
+        </div>
+
+        <!-- CONTACT ICONS (Bartosz Style) -->
+        <div class="contact-icons-row">
+          <!-- Email -->
+          <a href="mailto:vakt_ops@proton.me" class="icon-btn" title="Email: vakt_ops@proton.me" aria-label="Email">
+            <svg viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+          <!-- Telegram -->
+          <a href="https://t.me/vakt_ops" target="_blank" class="icon-btn" title="Telegram" aria-label="Telegram">
+            <svg viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/XVaktX" target="_blank" class="icon-btn" title="GitHub: XVaktX" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          </a>
+          <!-- Print / PDF -->
+          <button onclick="window.print()" class="icon-btn" title="Печать / Сохранить в PDF" aria-label="Print">
+            <svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- AVATAR PLACEHOLDER -->
+      <div class="avatar-wrapper">
+        <div class="avatar-placeholder" title="Место для фотографии или аватара">
+          <svg viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section>
+      <h2 class="section-title">О себе</h2>
+      <p class="about-text">
+        Специализируюсь на администрировании Linux и обеспечении надёжности серверных веб-сервисов и баз данных. В работе ориентируюсь на понимание сквозной архитектуры: локализую проблемы по системным логам (journalctl, error-логи Nginx) и сетевым утилитам (curl, ss, dig), а не случайными перезапусками сервисов. Имею практический опыт контейнеризации в Docker, настройки Nginx Reverse Proxy, администрирования PostgreSQL и автоматизации рутины на Bash. Быстро осваиваю внутренний стек компании, открыт к сменному графику (включая дежурства) и оперативной работе на инцидентах.
+      </p>
+    </section>
+
+    <!-- WORK EXPERIENCE SECTION -->
+    <section>
+      <h2 class="section-title">Опыт работы</h2>
+
+      <!-- Experience Item 1 -->
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="company-name">Models Houses</span>
+          <span class="exp-date">2026 — н.в.</span>
+        </div>
+        <div class="exp-role-title">Младший инженер инфраструктуры / Разработчик сервиса</div>
+        <div class="exp-desc">
+          Проектирование серверной архитектуры, контейнеризация и обеспечение стабильной работы fullstack-платформы:
+        </div>
+        <ul class="exp-bullets">
+          <li>Упаковал fullstack-стек (Node.js/Express, клиентский сервис, PostgreSQL 16) в изолированную среду Docker Compose с персистентными томами (volumes) для сохранения данных.</li>
+          <li>Сконфигурировал Nginx в роли Reverse Proxy: маршрутизация трафика, SSL/TLS шифрование, сжатие статики (Gzip) и кэширование ассетов.</li>
+          <li>Администрировал базу данных PostgreSQL 16: разграничение прав доступа, регулярное создание бэкапов через pg_dump по расписанию (Cron).</li>
+          <li>Внедрил механизмы защиты сервиса: ограничение частоты запросов (rate-limiting), простановка HTTP security headers (Helmet), структурированное логирование (Pino) и доставка алертов в Telegram Bot API.</li>
+        </ul>
+      </div>
+
+      <!-- Experience Item 2 -->
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="company-name">Self-Hosted Network Infrastructure</span>
+          <span class="exp-date">2025 — 2026</span>
+        </div>
+        <div class="exp-role-title">Инженер сетевых решений и безопасности VPS</div>
+        <div class="exp-desc">
+          Развёртывание защищённой сетевой инфраструктуры, туннелей и тестовых стендов на виртуальных серверах (Linux VPS):
+        </div>
+        <ul class="exp-bullets">
+          <li>Спроектировал и настроил каскадную схему из 2 VPS-серверов (мост / relay-туннель) для надёжного обхода DPI/ТСПУ и белых списков провайдеров.</li>
+          <li>Конфигурировал современные протоколы маскировки и маршрутизации трафика (VLESS / Reality / Shadowsocks, интеграция решений на базе Xray / Goldishka).</li>
+          <li>Реализовал комплексную защиту VPS (Hardening): фильтрация сетевого трафика через iptables/nftables, защита от сканеров портов и ботнетов через Fail2ban, изоляция SSH (только ключевая авторизация, нестандартные порты).</li>
+          <li>Поддерживал хостинг учебных стендов и тестовых веб-проектов на изолированных серверах под управлением Linux (Ubuntu/Debian).</li>
+        </ul>
+      </div>
+
+      <!-- Experience Item 3 -->
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="company-name">Home Lab & Personal Cloud Infrastructure</span>
+          <span class="exp-date">2024 — 2025</span>
+        </div>
+        <div class="exp-role-title">Инженер сопровождения (Home Server / Pet-проекты)</div>
+        <div class="exp-desc">
+          Комплексная настройка домашнего Linux-сервера для хостинга сервисов и тестовых сред:
+        </div>
+        <ul class="exp-bullets">
+          <li>Поднял стек контейнеров под управлением Docker: хранилище файлов, синхронизацию рабочего пространства Obsidian и локальный AI-мост для генеративных моделей.</li>
+          <li>Настроил приватную Mesh-сеть (WireGuard) для безопасного доступа к домашней инфраструктуре с мобильных устройств и внешних сетей в обход NAT.</li>
+          <li>Реализовал автоматическое создание снимков состояния (снапшотов) и резервное копирование баз данных сервисов по Cron.</li>
+          <li>Организовал тестовую песочницу для дебага веб-проектов перед их развёртыванием на боевых VPS.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section>
+      <h2 class="section-title">Навыки</h2>
+      <div class="skills-wrap">
+        <span class="skill-pill">Linux (Ubuntu / Debian / Fedora)</span>
+        <span class="skill-pill">Docker & Docker Compose</span>
+        <span class="skill-pill">Nginx (Reverse Proxy / SSL)</span>
+        <span class="skill-pill">PostgreSQL 16</span>
+        <span class="skill-pill">SQL (DDL / DML, транзакции)</span>
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">C++</span>
+        <span class="skill-pill">Bash Scripting</span>
+        <span class="skill-pill">systemd & journalctl</span>
+        <span class="skill-pill">Сети: TCP/IP, DNS, Routing</span>
+        <span class="skill-pill">Безопасность: iptables, Fail2ban</span>
+        <span class="skill-pill">VPN / Протоколы: VLESS, Reality, WireGuard</span>
+        <span class="skill-pill">Git & GitHub</span>
+        <span class="skill-pill">REST API</span>
+        <span class="skill-pill">Uptime Kuma / Мониторинг</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION (2-Column Grid) -->
+    <section>
+      <h2 class="section-title">Проекты</h2>
+      <div class="projects-grid">
+        
+        <!-- Project Card 1 -->
+        <div class="project-item">
+          <div class="project-top">
+            <div class="project-title-row">
+              <span class="live-dot"></span>
+              <span class="project-name">Models Houses (MVP)</span>
+            </div>
+            <p class="project-text">
+              Веб-платформа 3D-конфигуратора домов. Контейнеризация стека в Docker Compose, настройка Nginx Reverse Proxy с SSL/TLS шифрованием, хранение данных в PostgreSQL 16 и автоматическая отправка лидов/алертов в Telegram Bot API.
+            </p>
+          </div>
+          <div class="project-tags">
+            <span class="ptag">Docker Compose</span>
+            <span class="ptag">Nginx</span>
+            <span class="ptag">PostgreSQL</span>
+            <span class="ptag">Node.js</span>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-item">
+          <div class="project-top">
+            <div class="project-title-row">
+              <span class="live-dot"></span>
+              <span class="project-name">Anti-DPI Relay Cascade</span>
+            </div>
+            <p class="project-text">
+              Двухуровневый сетевой каскад из двух VPS для надёжного обхода DPI/ТСПУ и белых списков провайдеров. Маршрутизация трафика по протоколам VLESS / Reality, маскировка пакетов и оптимизация задержек.
+            </p>
+          </div>
+          <div class="project-tags">
+            <span class="ptag">Linux</span>
+            <span class="ptag">VLESS / Reality</span>
+            <span class="ptag">Xray</span>
+            <span class="ptag">Networking</span>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-item">
+          <div class="project-top">
+            <div class="project-title-row">
+              <span class="live-dot"></span>
+              <span class="project-name">Self-Hosted Cloud & Hardened VPS</span>
+            </div>
+            <p class="project-text">
+              Серверная инфраструктура для личных сервисов и тестовых сред. Развёртывание в Docker контейнеров синхронизации Obsidian (CouchDB), файлового хранилища и AI-моста. Харденинг VPS: изоляция SSH, фильтрация iptables, Fail2ban и WireGuard.
+            </p>
+          </div>
+          <div class="project-tags">
+            <span class="ptag">Docker</span>
+            <span class="ptag">WireGuard</span>
+            <span class="ptag">Obsidian</span>
+            <span class="ptag">Fail2ban</span>
+            <span class="ptag">iptables</span>
+          </div>
+        </div>
+
+        <!-- Project Card 4 -->
+        <div class="project-item">
+          <div class="project-top">
+            <div class="project-title-row">
+              <span class="live-dot"></span>
+              <span class="project-name">PostgreSQL Backup & Recovery</span>
+            </div>
+            <p class="project-text">
+              Скриптовый комплекс автоматизации резервного копирования PostgreSQL по расписанию Cron / systemd timers. Дампы через pg_dump, сжатие zstd, скользящая 7-дневная ротация и мгновенный алертинг в Telegram Bot API при ошибках.
+            </p>
+          </div>
+          <div class="project-tags">
+            <span class="ptag">PostgreSQL</span>
+            <span class="ptag">SQL</span>
+            <span class="ptag">Bash</span>
+            <span class="ptag">Cron</span>
+            <span class="ptag">Disaster Recovery</span>
+          </div>
+        </div>
+
+        <!-- Project Card 5 -->
+        <div class="project-item">
+          <div class="project-top">
+            <div class="project-title-row">
+              <span class="live-dot"></span>
+              <span class="project-name">Mobile Remote Agent Gateway</span>
+            </div>
+            <p class="project-text">
+              Система безопасного удалённого доступа и управления рабочим хостом и фоновыми процессами со смартфона. Организация прямого P2P-туннеля WireGuard через NAT, запуск автономных задач/агентов и стриминг статусов/логов в защищённый канал.
+            </p>
+          </div>
+          <div class="project-tags">
+            <span class="ptag">Linux</span>
+            <span class="ptag">WireGuard</span>
+            <span class="ptag">systemd</span>
+            <span class="ptag">Python</span>
+            <span class="ptag">Remote Control</span>
+          </div>
+        </div>
+
+        <!-- Project Card 6 -->
+        <div class="project-item">
+          <div class="project-top">
+            <div class="project-title-row">
+              <span class="live-dot"></span>
+              <span class="project-name">CLI Incident Diagnostics & Triage</span>
+            </div>
+            <p class="project-text">
+              Консольный набор утилит для экспресс-диагностики Linux-хостов при сбоях. Автоматический аудит открытых сокетов (ss), парсинг критических ошибок journalctl/dmesg, проверка дефицита inodes, RAM, swap и процессов-кандидатов на OOM-killer.
+            </p>
+          </div>
+          <div class="project-tags">
+            <span class="ptag">Bash</span>
+            <span class="ptag">Python</span>
+            <span class="ptag">Linux CLI</span>
+            <span class="ptag">Troubleshooting</span>
+            <span class="ptag">systemd</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>&copy; 2026 Тимофей И. • Санкт-Петербург</div>
+    </footer>
+
+  </div>
+
+</body>
+</html>

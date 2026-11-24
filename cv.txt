@@ -1,0 +1,76 @@
+================================================================================
+  Тимофей И. | Младший системный инженер / Инженер инфраструктурной поддержки
+  Россия, Санкт-Петербург
+  Email: vakt_ops@proton.me | Telegram: @vakt_ops | GitHub: https://github.com/XVaktX
+================================================================================
+
+[ 01. ПОЗИЦИОНИРОВАНИЕ И О СЕБЕ ]
+Специализируюсь на администрировании Linux и обеспечении надёжности серверных
+веб-сервисов и баз данных. В работе ориентируюсь на понимание сквозной архитектуры:
+локализую проблемы по системным логам (journalctl, error-логи Nginx) и сетевым
+утилитам (curl, ss, dig), а не случайными перезапусками сервисов.
+Имею практический опыт контейнеризации в Docker, настройки Nginx Reverse Proxy,
+администрирования PostgreSQL и автоматизации рутины на Bash.
+Быстро осваиваю внутренний стек компании, открыт к сменному графику
+(включая дежурства) и оперативной работе на инцидентах.
+Цель: Младший системный инженер / Инженер технической поддержки (L2 / Infra).
+
+[ 02. HARD SKILLS ]
+* OS & Administration: Linux (Ubuntu, Debian, Fedora), systemd, journalctl, Bash, Cron
+* Networks & Security: TCP/IP, DNS, routing, iptables, Fail2ban, WireGuard, VLESS/Reality
+* Web & Containers:    Nginx (Reverse Proxy, SSL, Gzip, Caching), Docker, Docker Compose
+* Databases:           PostgreSQL 16, SQL (DDL/DML, транзакции, оптимизация, pg_dump)
+* Languages & CS:      Python, C++, Git
+* Monitoring & Tools:  Uptime Kuma, REST API, Linux CLI Diagnostics (ss, curl, dig)
+
+[ 03. КЛЮЧЕВЫЕ ПРОЕКТЫ ]
+1. Models Houses (MVP)
+   - Контейнеризация стека в Docker Compose, Nginx Reverse Proxy, PostgreSQL 16
+   - Rate-limiting, Helmet security headers, алерты в Telegram Bot API
+
+2. Anti-DPI Relay Cascade
+   - Двухуровневый сетевой каскад VPS для обхода DPI/ТСПУ и белых списков
+   - Маршрутизация по протоколам VLESS / Reality, маскировка пакетов (Xray)
+
+3. Self-Hosted Cloud & Hardened VPS
+   - Синхронизация Obsidian (CouchDB), файловое хранилище, локальный AI-мост
+   - Защита VPS: изоляция SSH, фильтрация iptables, Fail2ban, сеть WireGuard
+
+4. PostgreSQL Backup & Disaster Recovery Pipeline
+   - Скриптовый комплекс Cron-бэкапов, zstd-сжатие, 7-дневная ротация
+   - Валидация целостности дампа и мгновенные алерты в Telegram Bot API
+
+5. Mobile Remote Agent Gateway & Host Controller
+   - Удалённое P2P-управление хостом и агентами со смартфона через WireGuard
+   - Сервисный демон systemd для запуска задач, стриминг логов и пуш-алертов
+
+6. CLI Incident Diagnostics & Server Triage Toolkit
+   - Консольный комплекс экспресс-диагностики Linux-хостов при инцидентах
+   - Аудит портов/сокетов (ss), парсинг journalctl/dmesg, проверка OOM/RAM/диска
+
+[ 04. ОПЫТ РАБОТЫ И ПРАКТИКА ]
+1. 2026 — н.в. | Models Houses
+   Младший инженер инфраструктуры / Разработчик сервиса
+   * Упаковка fullstack-стека в Docker Compose с сохранением данных в volumes.
+   * Конфигурирование Nginx Reverse Proxy: SSL, Gzip, кэширование, маршрутизация.
+   * Администрирование PostgreSQL 16: схемы данных, права, Cron-бэкапы pg_dump.
+   * Безопасность и надёжность: rate-limiting, Helmet, логирование Pino, Telegram-алерты.
+
+2. 2025 — 2026 | Self-Hosted Network Infrastructure
+   Инженер сетевых решений и безопасности VPS
+   * Каскадная схема из 2 VPS (мост / relay) для обхода DPI/ТСПУ и белых списков.
+   * Конфигурирование протоколов маскировки и маршрутизации (VLESS, Reality, Xray).
+   * Харденинг VPS: iptables/nftables, Fail2ban против ботов/сканеров, изоляция SSH.
+   * Хостинг тестовых стендов и учебных проектов на Linux (Ubuntu/Debian).
+
+3. 2024 — 2025 | Home Lab & Personal Cloud Infrastructure
+   Инженер сопровождения (Home Server / Pet-проекты)
+   * Развёртывание Docker-стека: файловое хранилище, Obsidian Sync, локальный AI-мост.
+   * Настройка приватной Mesh-сети (WireGuard) для безопасного доступа в обход NAT.
+   * Резервное копирование баз данных и снапшоты состояния по расписанию Cron.
+   * Тестовая песочница для дебага веб-сервисов перед деплоем на боевые VPS.
+
+================================================================================
+  Full Web Version: https://vakt.dev
+  Direct Contact:   Telegram @vakt_ops
+================================================================================
