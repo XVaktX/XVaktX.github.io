@@ -36,9 +36,9 @@
    - Синхронизация Obsidian (CouchDB), файловое хранилище, локальный AI-мост
    - Защита VPS: изоляция SSH, фильтрация iptables, Fail2ban, сеть WireGuard
 
-4. PostgreSQL Backup & Disaster Recovery Pipeline
-   - Скриптовый комплекс Cron-бэкапов, zstd-сжатие, 7-дневная ротация
-   - Валидация целостности дампа и мгновенные алерты в Telegram Bot API
+4. PostgreSQL Backup Pipeline [ https://github.com/XVaktX/postgres-backup-pipeline ]
+   - Автономная утилита: потоковое сжатие zstd, скользящая 7-дневная ротация
+   - Валидация целостности дампа (pg_restore), алерты в Telegram, systemd timers
 
 5. Mobile Remote Agent Gateway & Host Controller
    - Удалённое P2P-управление хостом и агентами со смартфона через WireGuard
